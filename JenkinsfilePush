@@ -11,7 +11,7 @@ node {
     }
 
     stage('Run') {
-          img.withRun("--name run-$BUILD_ID -p 80:80") { c ->
+          img.withRun("--name run-nginix-$BUILD_ID -p 80:80") { c ->
              sh 'sleep 20'  
              sh 'docker ps'
              sh "docker exec ${c.id} curl http://localhost"
