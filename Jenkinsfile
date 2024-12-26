@@ -17,7 +17,7 @@ node{
 
     stage('Test image') {
         docker.image('my_nginx').withRun('-p 80:80') { c ->
-        sh 'sleep 5'  
+        sh 'sleep 20'  
         sh 'docker ps'
         sh "docker exec ${c.id} curl http://localhost"
 	     }
