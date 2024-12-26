@@ -2,7 +2,13 @@ node{
   def app
 
     stage('Clone') {
+	sh 'echo "BEFORE CHECKOUT"'
+	sh 'pwd'
+	sh 'ls'    
         checkout scm
+	sh 'echo "AFTER CHECKOUT"'
+	sh 'pwd'
+	sh 'ls'
     }
 
     stage('Build dicker image') {
